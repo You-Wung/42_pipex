@@ -6,22 +6,17 @@
 /*   By: tyou <tyou@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 23:46:48 by tyou              #+#    #+#             */
-/*   Updated: 2021/06/08 18:23:33 by tyou             ###   ########.fr       */
+/*   Updated: 2021/06/10 22:44:54 by tyou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PIPEX_H
-#define PIPEX_H
-
+# define PIPEX_H
+# define CHILD 0
 # include <unistd.h>
 # include <stdio.h>
 # include <fcntl.h>
 # include "libft/libft.h"
-# define CHILD 0
-# define FILE_1	argv[1]
-# define FILE_2	argv[4]
-# define CMD_1	argv[2]
-# define CMD_2	argv[3]
 
 typedef struct		s_cmd
 {
@@ -29,5 +24,9 @@ typedef struct		s_cmd
 	char * const	*argv;
 	char * const	*envp;
 }					t_cmd;
-
+void				connect_pipe(int pipefd[2], int io);
+void				cmd_init(const char *cmd, t_cmd *strt);
+void				run_cmd(const char *cmd, t_cmd *cmd_arg);
+int					redirect_out(const char *file);
+int					redirect_in(const char *file);
 #endif
