@@ -49,6 +49,8 @@ int main(int argc, char const *argv[])
 			connect_pipe 에서 표준출력이 pipefd[1] 으로 들어간다.
 			커맨드를 실행할 때 표준입력으로 FIEL1 이 들어가는 것.
 			그 이후에 표준출력은 pipefd[1] 로 들어감.
+			
+			makefile 
 		*/
 	}
 	return (1);
