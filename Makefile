@@ -13,9 +13,9 @@ SRCS = 	pipex.c\
 		libft/ft_strlen.c
 
 $(NAME) :
-	#make all -C libft
-	gcc $(SRCS) -o $(NAME) -fsanitize=address
-	#gcc $(CFLAGS) $(SRCS) -o $(NAME)
+	make all -C libft
+	#gcc $(SRCS) -o $(NAME) -fsanitize=address
+	gcc $(CFLAGS) $(SRCS) -o $(NAME)
 
 all : $(NAME)
 
